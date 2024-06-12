@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+section {
+  max-width: 1440px;
+  margin: 50px auto;
+}
+section #btn {
+  padding: 15px 20px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: teal;
+  text-decoration: none;
+  margin-left: -5%;
+}
+section .cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+section .cards .card {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+section .cards .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  overflow: hidden;
+}
+section .cards .card .card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-right: 15%;
+}
+section .cards .card #delete-btn {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: rgba(75, 0, 0, 0.756);
+  text-decoration: none;
+  width: 100px;
+  cursor: pointer;
+}
+section .cards .card .status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: auto;
+}
+section .cards .card .status-indicator.online {
+  background-color: #4CAF50;
+}
+section .cards .card .status-indicator.offline {
+  background-color: #F44336;
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+}
+.container #btn-create {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: rgb(2, 90, 2);
+  text-decoration: none;
+  margin-left: -30%;
+}
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container table tr td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.container table tr td img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#form_data {
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#form_data input {
+  width: 100%;
+  padding: 13px 23px;
+  margin: 10px 0;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid gray;
+}
+
+#form_data select {
+  width: 100%;
+  padding: 7px;
+}
+
+#form_data #create_user {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  border: none;
+  border-radius: 13px;
+  width: 100%;
+  margin-top: 10px;
+}/*# sourceMappingURL=style.css.map */

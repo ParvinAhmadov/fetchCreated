@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/scss/style.css">
+    <title>Document</title>
+    <script defer src="../src/js/app.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <a href="index.html" id="btn-create">Create</a>
+        <form action id="form_data">
+            <input type="text" placeholder="Img URL" id="image"
+                name="image" required />
+            <input type="text" placeholder="enter name" id="name"
+                name="name" required minlength="3" maxlength="30" />
+            
+            <input type="text" placeholder="enter profession" id="text"
+                name="text" required />
+         
+            <select>
+
+                <option value="Approved">Offline</option>
+                <option value="Rejected">Online</option>
+            </select>
+            <button id="create_user" type="submit">create
+                user</button>
+        </form>
+    </div>
+
+</body>
+</html>
