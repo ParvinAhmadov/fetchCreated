@@ -23,8 +23,9 @@ section {
   .cards {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+ display: grid;
+ grid-template-columns: repeat(3, 400px);
+
     gap: 1rem;
 
     .card {
@@ -32,12 +33,23 @@ section {
       display: flex;
       flex-direction: column;
       gap: 20px;
-
+      width: 300px;
+     
       img {
         object-fit: cover;
         border-radius: 15px;
         overflow: hidden;
+        width: 300px;
+        height: 300px;
+      cursor: pointer;
+      
       }
+      img:hover{
+        transform: scale(0.9);
+        transition-duration: 1s;
+        overflow: hidden;
+      }
+   
 
       .card-text {
         display: flex;
@@ -47,14 +59,14 @@ section {
         margin-right: 15%;
       }
 
-      #delete-btn {
+      .delete-btn {
         padding: 10px 15px;
         border-radius: 20px;
         border: none;
         color: white;
         background-color: rgba(75, 0, 0, 0.756);
         text-decoration: none;
-        width: 100px;
+        width: 100%;
         cursor: pointer;
       }
 
@@ -131,4 +143,12 @@ section {
   border-radius: 13px;
   width: 100%;
   margin-top: 10px;
+}
+#btn-create{
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: rgb(30, 138, 0);
+  text-decoration: none;
 }

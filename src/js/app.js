@@ -14,10 +14,16 @@ const postApiDataWithCallback = async (endPoint,data) =>{
    })
 return response;
 };
+const deleteApiDataWithCallback = async (endPoint, id, cb) => {
+    let response = await fetch(`${BaseUrl}/${endPoint}/${id}`, {
+        method: "DELETE"
+    });
+    cb(response);
+};
 
 const userImage = document.querySelector("#image");
 const userName = document.querySelector("#name");
-const userProfession = document.querySelector("#text");
+const userProfession = document.querySelector("#profession");
 const userStatus = document.querySelector("#status")
 const createBTN = document.querySelector("#create_user");
 
@@ -35,9 +41,11 @@ data.map((item)=>{
         <div class="card-text">
             <div class="status-indicator online"></div>
             <h2>${item.name}</h2>
-            <span>${item.surname}</span>
+            <span>${item.profession}</span>
         </div>
-        <button id="delete-btn">Delete</button>
+     
+        <button class="delete-btn" data-id="${item.id}">Delete</button>
+
     </div>
     `;
 })
@@ -56,3 +64,23 @@ createBTN&&createBTN.addEventListener("click",async(e)=>{
 
     postApiDataWithCallback("data",usData)
 });
+
+const deleteCard = (id) => {
+    const confirmed = confirm("are you sure you want to delete?");
+    if (confirmed) {
+        deleteApiDataWithCallback("data", id, (response) => {
+            if (response.ok) {
+                const cardRemove = document.getElementById(`card-${id}`)
+                cardRemove.remove();
+            }
+        })
+  }
+}
+document.addEventListener("click", (e) => {
+    if (e.target && e.target.classList.contains("delete-btn")) {
+        const cardId = e.target.dataset.id;
+        deleteCard(cardId);
+    }
+});
+
+
